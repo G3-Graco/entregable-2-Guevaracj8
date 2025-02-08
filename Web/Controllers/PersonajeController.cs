@@ -140,5 +140,65 @@ namespace Web.Crontrollers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpPost("Moverse")]
+        public async Task<ActionResult<Ubicacion>> Moverse(int id, int idUbicacion)
+        {
+            try
+            {
+                var createdPersonaje =
+                    await _servicio.Desequipar(id, idUbicacion);
+
+                return Ok(createdPersonaje);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPost("AceptarMision")]
+        public async Task<ActionResult<Mision>> AceptarMision(int id, int idMision)
+        {
+            try
+            {
+                var createdPersonaje =
+                    await _servicio.AceptarMision(id, idMision);
+
+                return Ok(createdPersonaje);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPost("ProgresoMision")]
+        public async Task<ActionResult<Mision>> ProgresoMision(int id, int idMision)
+        {
+            try
+            {
+                var createdPersonaje =
+                    await _servicio.ProgresoMision(id, idMision);
+
+                return Ok(createdPersonaje);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPost("CompletarMision")]
+        public async Task<ActionResult<Mision>> CompletarMision(int id, int idMision)
+        {
+            try
+            {
+                var createdPersonaje =
+                    await _servicio.CompletarMision(id, idMision);
+
+                return Ok(createdPersonaje);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
