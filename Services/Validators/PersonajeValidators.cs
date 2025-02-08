@@ -14,7 +14,8 @@ namespace Services.Validators
             
             RuleFor(x => x.experiencia)
                 .LessThanOrEqualTo(Personaje => Personaje.nivel * 10 )
-                .GreaterThanOrEqualTo(0);
+                .GreaterThanOrEqualTo(0)
+                ;
 
             RuleFor(x => x.nivel)
                 .LessThanOrEqualTo(99)

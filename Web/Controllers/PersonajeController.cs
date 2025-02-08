@@ -109,5 +109,36 @@ namespace Web.Crontrollers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpPost("Equipar")]
+        public async Task<ActionResult<Objeto>> Equipar(int idObjeto, int idEquipo)
+        {
+            try
+            {
+                var createdPersonaje =
+                    await _servicio.Equipar(idObjeto, idEquipo);
+
+                return Ok(createdPersonaje);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("Desequipar")]
+        public async Task<ActionResult<Equipo>> Desequipar(int id, int ObjToRemoveID)
+        {
+            try
+            {
+                var createdPersonaje =
+                    await _servicio.Desequipar(id, ObjToRemoveID);
+
+                return Ok(createdPersonaje);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

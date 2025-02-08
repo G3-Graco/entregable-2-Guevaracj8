@@ -18,5 +18,8 @@ namespace Core.Interfaces.Entities
         public int nivel { get; set; }
         public List<Equipo> equipo { get; set; }
         public List<Habilidad> habilidades { get; set; }
+        public string ubicacion {get;set;}
+        public List<Mision> misiones{ get; set; }
+
     }
 }

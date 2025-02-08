@@ -22,5 +22,7 @@ namespace Core.Entities
         public int experiencia { get; set; }
         public int? tipoId { get; set; }
         public virtual TipoPersonaje? tipo { get; set; } 
+        public string ubicacion {get;set;}
+        public List<Mision> misiones{ get; set; }
     }
 }
